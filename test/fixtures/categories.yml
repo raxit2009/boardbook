@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  account_number: 1
+  post_month: 2015-01-28 16:05:24
+  beginning_balance: 1.5
+  ending_balance: 1.5
+  net_change: 1.5
+
+two:
+  name: MyString
+  account_number: 1
+  post_month: 2015-01-28 16:05:24
+  beginning_balance: 1.5
+  ending_balance: 1.5
+  net_change: 1.5

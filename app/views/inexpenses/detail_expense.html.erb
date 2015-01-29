@@ -1,0 +1,36 @@
+<div class = "detailexp">
+	<table bgcolor="white">
+		<tr>
+			<th></th>
+			<th>MTD Actual</th>
+			<th>YTD Actual</th>
+		</tr>
+		<% @related_inexpense.each do |rel_exp| %>
+		<tr>
+			<td><%= rel_exp.name%></td>
+			<td><%= link_to rel_exp.mtd_actual, "#", :value => rel_exp.id, :class => "inexp_detal_#{rel_exp.id}", :onclick => "detaildisplaycategory(#{rel_exp.id})"%></td>
+			<td><%= rel_exp.ytd_actual%></td>
+		</tr>
+		<%end%>
+	</table>
+</div>
+<script type="text/javascript">
+  function detaildisplaycategory(id){
+    var url = "incategories/detail_category?id=" + id
+    $.colorbox({iframe:true,inline:false, width:"800px",height: "600px", fixed:false, href: "incategories/" + id});
+    // $.ajax({
+    //   url: url,
+    //   type: 'POST',
+    //   success: function (data) {
+    //   // on success, post (preview) returned data in fancybox
+    //     $.colorbox({iframe:true,inline:false, width:"70%",height: "80%", fixed:false, href: data});
+    //     // $.colorbox({
+    //     //        href: data, 
+    //     //        iframe:true, 
+    //     //        width: "70%", 
+    //     //        height: "80%", 
+    //     //    }); 
+    //   }
+    // });
+  }
+</script>

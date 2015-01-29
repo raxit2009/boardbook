@@ -1,0 +1,45 @@
+<style type="text/css">
+	table {
+		border-collapse: collapse !important;
+    	position:fixed !important;
+    	top:44% !important;
+    	left: 44% !important;
+    	bottom: 50% !important;
+    	padding-bottom: 200px !important;
+    }
+    #colorbox{
+	    display: block;
+	    height: 34px;
+	    left: 198px;
+	    position: inherit !important;
+	    top: 173px;
+	    visibility: visible;
+	    width: 923px;
+	}
+	#cboxWrapper{
+ 	   height: 32px !important;
+ 	   left: 85px !important;
+ 	   top: 105px !important;
+	    width: 923px !important;
+	}
+</style>
+<table bgcolor="#cdcdcd">
+	<tr>
+		<td>Post Month</td>
+		<td>Tran Date</td>
+		<td>Refer</td>
+		<td>Payee/Description</td>
+		<td>Debit</td>
+		<td>Credit</td>
+	</tr>
+	<% @related_incategory.each do |rel_incat| %>
+	<tr>
+		<td><%= rel_incat.post_month%></td>
+		<td><%= rel_incat.tran_date %></td>
+		<td><%= rel_incat.refer %></td>
+		<td><%= rel_incat.description %></td>
+		<td><%= rel_incat.debit %></td>
+		<td><%= rel_incat.credit %></td>
+	</tr>
+	<%end%>
+</table>

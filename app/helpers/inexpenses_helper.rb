@@ -1,0 +1,2 @@
+module InexpensesHelper
+end

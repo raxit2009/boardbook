@@ -1,0 +1,47 @@
+
+<div>
+  <table>
+    <%= link_to "Upload Data", upload_detail_path(),:class => "detail_upload" %>
+    <tr>
+      <th class = "page-header">Operating Expense</th>
+      <th class = "page-header">MTD Actual</th>
+      <th class = "page-header">YTD Actual</th>
+    </tr>
+    <tr>
+      <th class = "mid-first-header">January 30,2015</th>
+      <td class = "mid-header"></td>
+      <td class = "mid-header"></td>
+    </tr>
+    <% @expense.each do |expense| %>
+      <tr>
+      
+        <td class = "ex-name"><%= expense.name%></td>
+        <td><%= link_to expense.mtd_total,"#", :value => expense.id, :class => "expdetail_#{expense.id}", :onclick => "detaildisplayexpense(#{expense.id})"%></td>
+        <td><%= link_to expense.ytd_total%></td>
+      
+      </tr>
+    <%end%>
+  </table>
+</div>
+<script type="text/javascript">
+  function detaildisplayexpense(id){
+    var url = "inexpenses/detail_expense?expense_id=" + id
+    $.ajax({
+      url: url,
+      type: 'POST',
+      success: function (data) {
+      // on success, post (preview) returned data in fancybox
+        $.fancybox(data, {
+          // fancybox API options
+          fitToView: true,
+          width: 905,
+          height: 505,
+          autoSize: false,
+          closeClick: false,
+          openEffect: 'none',
+          closeEffect: 'none'
+        }); // fancybox
+      }
+    });
+  }
+</script>

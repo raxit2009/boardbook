@@ -1,0 +1,35 @@
+<style type="text/css">
+	table {
+		border-collapse: collapse !important;
+    	position:relative  !important;
+    	margin-top: 20px !important;
+    	left: 44% !important;
+    	bottom: 50% !important;
+    	overflow: scroll !important;
+    	height: 400px !important;
+    	width: 600px !important;
+    }
+    .incatdata{
+    	
+    }
+</style>
+<table bgcolor="#cdcdcd">
+	<tr>
+		<td>Post Month</td>
+		<td>Tran Date</td>
+		<td>Refer</td>
+		<td>Payee/Description</td>
+		<td>Debit</td>
+		<td>Credit</td>
+	</tr>
+	<% @related_incategory.each do |rel_incat| %>
+	<tr>
+		<td><%= rel_incat.post_month%></td>
+		<td><%= rel_incat.tran_date %></td>
+		<td><%= rel_incat.refer %></td>
+		<td><%= rel_incat.description %></td>
+		<td><%= rel_incat.debit %></td>
+		<td><%= rel_incat.credit %></td>
+	</tr>
+	<%end%>
+</table>
