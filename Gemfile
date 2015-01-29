@@ -9,6 +9,8 @@ gem 'mysql2'
 gem 'roo'
 gem 'fancybox2-rails', '~> 0.2.8'
 gem 'jquery-colorbox-rails'
+# gem 'heroku'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
